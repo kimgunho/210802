@@ -18,3 +18,6 @@ function add(a, b){
 add(10, 20) good
 add("짱","구") no
 
+
+
+d
