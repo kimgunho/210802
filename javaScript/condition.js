@@ -4,9 +4,9 @@
 
 const isHateZombie = true;
 
-if(isHateZombie){
+if (isHateZombie) {
     console.log('i hate...');
-} else{
+} else {
     console.log('i love zombie...')
 }
 
@@ -14,9 +14,9 @@ if(isHateZombie){
 // 문제의 코드
 let MSG;
 
-if(isHateZombie){
+if (isHateZombie) {
     console.log('i hate...');
-} else{
+} else {
     console.log('i love zombie...')
 }
 
@@ -24,19 +24,19 @@ if(isHateZombie){
 const msg = isHateZombie ? 'hate' : 'love...'
 
 let lavel
-if(level === '5'){
+if (level === '5') {
     lavel = '평민'
-}else if(level === '4'){
+} else if (level === '4') {
     ...
 }
 
 //조건이 너무 많으면 switch 고려하자..
-switch(level){
-    case '5' : {
-        lavel =  '평민'
+switch (level) {
+    case '5': {
+        lavel = '평민'
     }
-    case '4' : {
-        lavel =  '평민2'
+    case '4': {
+        lavel = '평민2'
     }
 ...
 }
