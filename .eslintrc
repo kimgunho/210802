@@ -13,6 +13,6 @@
     "eslint:recommended",
     ],
     "rules": {
-    "no-console": "warn" //off , warn = 써도되
+    "no-console": "warn" //off , warn = 써도되는데 경고...
     }
 }
