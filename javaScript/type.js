@@ -1,7 +1,7 @@
 // js 동적 타입 = 반응에 쉬운 언어 
 var a = ? 
 typeof a // string
-
+//
 // 원시타입 = number, string, undfinded, null, boolean, Sybol
 
 // 객체타입 = arr, obj
