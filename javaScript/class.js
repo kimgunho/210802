@@ -1,9 +1,7 @@
-const p = { = 
+const p = {
   name: 'kim',
   age: 40,
-  getName : function(){
-
-  }
+  getName: function () {},
 }
 
 const p2 = {
@@ -16,18 +14,15 @@ const p3 = {
   age: 55,
 }
 
-
 class Person {
-    // new를 실행했을때 제일먼저 단 한번 실행되는 함수
-    constructor(name, age){
-        // 초기화 => 값, 이벤트, ...
-        // ...rest
-        this.name = name
-        this.age = age
-        this.getName = function (){
-
-        } 
-    }
+  // new를 실행했을때 제일먼저 단 한번 실행되는 함수
+  constructor(name, age) {
+    // 초기화 => 값, 이벤트, ...
+    // ...rest
+    this.name = name
+    this.age = age
+    this.getName = function () {}
+  }
 }
 
 const p4 = new Person('cu', 42)
