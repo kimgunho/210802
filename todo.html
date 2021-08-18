@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호러 투두리스트</title>
+
+    <link rel="stylesheet" href="css/todo.css">
+    <script src="javaScript/todo.js"></script>
+</head>
+<body>
+    <div id="main">
+        <h1>horror users list</h1>
+
+        <ul class='edits'>
+            <!-- <li><a href="#">edit</a></li> -->
+        </ul>
+
+        <ul class='listTitle'>
+            <li>del</li>            
+            <li>num</li>
+            <li>name</li>
+            <li>age</li>
+            <li>isZombieLike</li>
+            <li>memo</li>
+        </ul>
+
+        <ul class='playerList'>
+            <!-- <li>
+                <ul>
+                    <li class='del'><a href="javascript:void(0)">del</a></li>
+                    <li class='num'>1</li>                    
+                    <li class='name'>kimgunho</li>                    
+                    <li class='age'>24</li>                    
+                    <li class='isZombieLike'>true</li>                    
+                    <li class='tx'>Lorem ipsum dolor sit amet</li>                    
+                </ul>
+            </li> -->
+        </ul>
+    </div>
+
+
+    <div class="writeInfo">
+        <form>
+            <ul class='wrLists'>
+                <li>
+                    <label for="">이름</label>
+                    <input type="text" name="" id="" class='wrName' required />
+                </li>
+                <li>
+                    <label for="">나이</label>
+                    <input type="text" name="" id="" class='wrAge' required>
+                </li>
+                <li>
+                    <label for="">좀비를 좋아합니까?</label>
+
+                    <input type="radio" name="iZL" value="true" id="" class='wrZombie'> 좋아합니다.
+                    <input type="radio" name="iZL" value="false" id="" class='wrZombie'> 싫어합니다.
+                </li>
+                <li>
+                    <label for="">메모</label>
+                    <input type="text" name="" id="" class='wrMemo' required>
+                </li>
+            </ul>
+
+            <ul class='btns'>
+                <li>
+                    <button class='btn' type='button' onclick="Action.loadAction();">등록</button>
+                </li>
+                <li>
+                    <button class='btn' type='button' onclick="Action.loadZombieLike();">좀비를 좋아하는 사람리스트</button>
+                </li>
+            </ul>
+        </form>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "parser": "babel-eslint", // 코드를 해석해줌
+    "parserOptions": { // 파서에게 알려줄 정보..
+    "ecmaVersion": 6, 
+    "sourceType": "module"
+    },
+    "plugins": ["import", "node", "promise", "standard"], // 있어도 그만 없어도 그만 있으면 부가적인 귶칙을 검사해줌
+    "env": { // 코드가 돌아가는 환경
+    "browser": true,
+    "node": true,
+    },
+    "extends": [
+    "eslint:recommended",
+    ],
+    "rules": {
+    "no-console": "warn" //off , warn = 써도되는데 경고...
+    }
+}

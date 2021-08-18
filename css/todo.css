@@ -1,0 +1,47 @@
+/* reset */
+body{padding:0;margin:0;}
+h1,h2,h3,h4,h5,h6{margin:0;}
+ul{list-style: none;padding:0;margin:0;}
+p{margin:0;}
+a{margin:0;text-decoration: none;color:#000;}
+
+#main{width: 100%;max-width: 860px;padding:10px;background-color: #f0f0f0;margin:50px auto;box-shadow: 2px 2px 22px rgba(200,200,200,.4);border:1px solid #ddd;}
+h1{color:blueviolet;border-bottom: 1px solid #ddd;text-transform:capitalize;margin-bottom: 10px;padding:20px 0;}
+
+.edits{display: flex;justify-content: flex-end;}
+.edits li{margin-right: 10px;}
+.edits li a{text-transform: capitalize;font-size: .875rem;}
+
+.listTitle{display: flex;padding:1.45em 0 1em;border-bottom:1px solid #ddd;}
+.listTitle li{flex-grow: 1;text-align: center;text-transform: capitalize;}
+.listTitle li:nth-child(1){width: 10%;}
+.listTitle li:nth-child(2){width: 10%;}
+.listTitle li:nth-child(3){width: 20%;}
+.listTitle li:nth-child(4){width: 10%;}
+.listTitle li:nth-child(5){width: 15%;}
+.listTitle li:nth-child(6){width: 35%;}
+
+.playerList{padding-top: 10px;}
+.playerList > li{border-bottom: 1px solid #ddd;padding:10px 0;}
+.playerList > li:last-child{border-bottom: 0px;padding-bottom: 30px;}
+.playerList > li ul{display: flex;}
+.playerList > li ul li{flex-grow: 1;text-align: center;text-transform: capitalize;}
+.playerList > li ul li.like{color:cornflowerblue}
+.playerList > li ul li.dislike{color:crimson}
+.playerList > li ul li:nth-child(1){width: 10%;}
+.playerList > li ul li:nth-child(2){width: 10%;}
+.playerList > li ul li:nth-child(3){width: 20%;}
+.playerList > li ul li:nth-child(4){width: 10%;}
+.playerList > li ul li:nth-child(5){width: 15%;}
+.playerList > li ul li:nth-child(6){width: 35%;}
+
+.writeInfo{width: 100%;max-width: 860px;padding:10px;background-color: #f0f0f0;margin:50px auto;box-shadow: 2px 2px 22px rgba(200,200,200,.4);border:1px solid #ddd;}
+.wrLists{display: flex;flex-wrap: wrap;}
+.wrLists li{padding: 20px;width: 50%;box-sizing: border-box;}
+.wrLists li label{display: block;font-size: 1rem;padding-bottom: 5px;}
+.wrLists li input[type='text']{width: 100%;padding:8px;box-sizing: border-box;border:1px solid #ddd;}        
+.wrLists li input[type='radio']{width: 20px;height: 20px;vertical-align: middle;}        
+
+.btns{display: flex;justify-content: flex-end;}
+.btns li{margin-right: 20px;}
+.btns li .btn{background: dimgrey;color:#fff;border:0;padding:0;cursor: pointer;padding:10px;box-sizing: border-box;}
