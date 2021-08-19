@@ -13,6 +13,7 @@ class Monsters {
   }
 
   initialize() {
+    this.componentUpdateState()
     this.render()
     this.componentBindEvent()
   }
@@ -22,9 +23,9 @@ class Monsters {
       (acc, monster) => {
         return `
             ${acc}
-             <li class='${monster.id}'>
+             <li>
                 <div>
-                    <p>${monster.id}</p>
+                    <p class='remove' data-id='${monster.id}'>삭제</p>
                     <h2 class='name'>${monster.name}</h2>
                     <p class='status'>${monster.status}</p>
                     <p class='tx'>${monster.tx}</p>
@@ -45,22 +46,38 @@ class Monsters {
       const nameValue = nameEl.value
       const statusValue = statusEl.value
       const txValue = txEl.value
-
       this.addMonsters(nameValue, statusValue, txValue)
     })
+  }
+
+  componentUpdateState() {
+    const removeEl = document.querySelectorAll('.remove')
+    for (const remove of removeEl) {
+      remove.addEventListener('click', (e) => {
+        this.removeMonsters(Number(e.target.dataset.id))
+      })
+    }
+  }
+
+  removeMonsters(id) {
+    this.monsters = this.monsters.filter((monster) => {
+      monster.id !== id
+    })
+    console.log(this.monsters)
+    this.render()
   }
 
   addMonsters(name, status, info) {
     this.monsters = [
       ...this.monsters,
       {
-        id: this.monsters.length + 1,
+        id: Date.now(),
         name: name,
         status: status,
         tx: info,
       },
     ]
-
+    console.log(this.monsters)
     this.render()
   }
 }
