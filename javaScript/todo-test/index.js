@@ -13,9 +13,9 @@ class Monsters {
   }
 
   initialize() {
-    this.componentUpdateState()
     this.render()
     this.componentBindEvent()
+    // this.componentUpdateState()
   }
 
   render() {
@@ -35,6 +35,7 @@ class Monsters {
       },
       ``,
     )
+    this.componentUpdateState()
   }
 
   componentBindEvent() {
@@ -60,10 +61,9 @@ class Monsters {
   }
 
   removeMonsters(id) {
-    this.monsters = this.monsters.filter((monster) => {
-      monster.id !== id
-    })
+    this.monsters = this.monsters.filter((monster) => monster.id !== id)
     console.log(this.monsters)
+
     this.render()
   }
 
