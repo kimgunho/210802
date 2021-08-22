@@ -9,6 +9,7 @@ h1{font-size: 2rem;color:coral;text-transform: uppercase;text-align: center;padd
 #app{background-color: #f0f0f0;width: 90%;border-radius: 10px;margin:30px auto;box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);}
 #list{padding:20px;box-sizing: border-box;display: flex;flex-wrap: wrap;}
 #list li{width: 25%;padding:30px;box-sizing: border-box;}
+#list li.remove{display: none;}
 #list li.glass{background-color: seagreen;}
 
 #list li p.remove{text-indent: -9999px;width: 10px;height: 10px;background-color: #000;border-radius: 50%;display: none;}
@@ -30,4 +31,5 @@ h1{font-size: 2rem;color:coral;text-transform: uppercase;text-align: center;padd
 
 .hash-nav{display: flex;flex-wrap: wrap;}
 .hash-nav li{padding:10px;cursor: pointer;}
+.hash-nav li.on{font-weight: bold;}
 .hash-nav li::before{content:'#'}

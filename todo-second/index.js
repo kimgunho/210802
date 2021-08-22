@@ -15,7 +15,7 @@ componentUpdateState : 컴포넌트의 값이 변경되었을때 동작하는 �
 class Pokemons {
   constructor() {
     this.pokomons = []
-    this.pokemonsTypes = []
+    this.pokomonTypes = []
     this.initialize()
   }
 
@@ -47,8 +47,7 @@ class Pokemons {
           },
         } = data
         this.pushPokemonsList(name, id, img, typeName)
-        this.pokemonsTypes = [...this.pokemonsTypes, typeName]
-        this.resetRepeatType()
+        this.resetPokemonTypes(typeName)
       })
       .catch((err) => console.error(err))
   }
@@ -65,41 +64,21 @@ class Pokemons {
     ]
     this.render()
   }
-  resetRepeatType() {
-    const newResetType = []
-    this.pokemonsTypes.forEach((ele) => {
-      if (!newResetType.includes(ele)) {
-        newResetType.push(ele)
-      }
-    })
 
-    // this.render()
-    return newResetType
+  resetPokemonTypes(type) {
+    if (!this.pokomonTypes.includes(type)) {
+      this.pokomonTypes = [...this.pokomonTypes, type]
+    }
+
+    this.render()
   }
 
   render() {
-    this.pokemonListRender()
-    this.hashRender()
-    this.componentBindEvent()
-  }
-
-  hashRender() {
-    const a = this.resetRepeatType()
-    // console.log(a)
-
-    document.querySelector('.hash-nav').innerHTML = a.reduce((acc, cuu) => {
-      return `
-        ${acc}
-        <li>${cuu}</li>
-      `
-    }, ``)
-  }
-  pokemonListRender() {
     document.getElementById('list').innerHTML = this.pokomons.reduce(
       (acc, cuu) => {
         return `
             ${acc}
-             <li>
+             <li class="${cuu.type}">
                 <div>
                     <p class='remove' data-id='${cuu.id}'>del</p>
                     <img src="${cuu.img}" alt='${cuu.name}'>
@@ -113,10 +92,44 @@ class Pokemons {
       },
       ``,
     )
+
+    document.querySelector('.hash-nav').innerHTML = this.pokomonTypes.reduce(
+      (acc, cur) => {
+        return `
+        ${acc}
+        <li>${cur}</li>
+        `
+      },
+      `<li class='all'>all</li>`,
+    )
+
+    this.componentBindEvent()
   }
 
   componentBindEvent() {
     this.typeBackground()
+    this.selectHashType()
+  }
+
+  selectHashType() {
+    const selectEl = document.querySelectorAll('.hash-nav li')
+    const pokemonEls = document.querySelectorAll('#list li')
+    const REMOVEKEY = 'remove'
+
+    for (const selectBtn of selectEl) {
+      selectBtn.addEventListener('click', (e) => {
+        const typeName = e.target.innerText
+
+        for (const pokemon of pokemonEls) {
+          pokemon.classList.remove(REMOVEKEY)
+          if (pokemon.className !== typeName) {
+            selectBtn.className === 'all'
+              ? pokemon.classList.remove(REMOVEKEY)
+              : pokemon.classList.add(REMOVEKEY)
+          }
+        }
+      })
+    }
   }
 
   typeBackground() {
@@ -158,7 +171,7 @@ class Pokemons {
           break
 
         default:
-        // console.log(`Sorry, we are out of`)
+        // console.log(`no`)
       }
     }
   }
