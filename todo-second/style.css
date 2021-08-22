@@ -15,4 +15,19 @@ h1{font-size: 2rem;color:coral;text-transform: uppercase;text-align: center;padd
 #list li img{width: 100%;}
 #list li h2{color:#000;font-size: 1.125rem;font-weight: 400;}
 #list li p.type{padding-top: 10px;}
-#list li p.type span{background-color: sienna;color:#fff;padding:3px 5px;box-sizing: border-box;border-radius: 10px;}
+#list li p.type span{background-color: #000;color:#fff;padding:3px 5px;box-sizing: border-box;border-radius: 10px;}
+#list li p.type span.fire{background-color: brown;color:#fff;}
+#list li p.type span.bug{background-color:yellowgreen;color:#fff;}
+#list li p.type span.grass{background-color: darkgreen;color:#fff;}
+#list li p.type span.water{background-color:cornflowerblue;color:#fff;}
+#list li p.type span.electric{background-color:yellow;color:#333;}
+#list li p.type span.normal{background-color:dimgray;color:#fff;}
+#list li p.type span.poison{background-color:purple;color:#fff;}
+#list li p.type span.ground{background-color:darkslategrey;color:#fff;}
+#list li p.type span.fighting{background-color:ivory;color:#333;}
+#list li p.type span.fairy{background-color:plum;color:#333;}
+#list li p.type span.psychic{background-color:palevioletred;color:#333;}
+
+.hash-nav{display: flex;flex-wrap: wrap;}
+.hash-nav li{padding:10px;cursor: pointer;}
+.hash-nav li::before{content:'#'}

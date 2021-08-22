@@ -15,12 +15,14 @@ componentUpdateState : 컴포넌트의 값이 변경되었을때 동작하는 �
 class Pokemons {
   constructor() {
     this.pokomons = []
-
+    this.pokemonsTypes = []
     this.initialize()
   }
 
   initialize() {
     this.repeatLoadFuction()
+    this.render()
+    // this.componentBindEvent()
   }
 
   repeatLoadFuction() {
@@ -33,24 +35,22 @@ class Pokemons {
   getPokemon(num) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
       .then((res) => res.json())
-      //   .then((data) => data)
       .then((data) => {
         const {
           name,
           id,
           sprites: { front_default: img },
-          //   types: {
-          //     0: {
-          //       type: { name: typeName },
-          //     },
-          //   },
+          types: {
+            0: {
+              type: { name: typeName },
+            },
+          },
         } = data
-        for (const typelist of data.types) {
-          //   console.log(typelist.type.name)
-          this.pushPokemonsList(name, id, img, typelist.type.name)
-        }
+        this.pushPokemonsList(name, id, img, typeName)
+        this.pokemonsTypes = [...this.pokemonsTypes, typeName]
+        this.resetRepeatType()
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.error(err))
   }
 
   pushPokemonsList(name, id, img, type) {
@@ -63,13 +63,38 @@ class Pokemons {
         type: type,
       },
     ]
-    // console.log(this.pokomons)
     this.render()
   }
+  resetRepeatType() {
+    const newResetType = []
+    this.pokemonsTypes.forEach((ele) => {
+      if (!newResetType.includes(ele)) {
+        newResetType.push(ele)
+      }
+    })
 
-  getPokemonsType() {}
+    // this.render()
+    return newResetType
+  }
 
   render() {
+    this.pokemonListRender()
+    this.hashRender()
+    this.componentBindEvent()
+  }
+
+  hashRender() {
+    const a = this.resetRepeatType()
+    // console.log(a)
+
+    document.querySelector('.hash-nav').innerHTML = a.reduce((acc, cuu) => {
+      return `
+        ${acc}
+        <li>${cuu}</li>
+      `
+    }, ``)
+  }
+  pokemonListRender() {
     document.getElementById('list').innerHTML = this.pokomons.reduce(
       (acc, cuu) => {
         return `
@@ -88,6 +113,54 @@ class Pokemons {
       },
       ``,
     )
+  }
+
+  componentBindEvent() {
+    this.typeBackground()
+  }
+
+  typeBackground() {
+    const typeEls = document.querySelectorAll('span')
+    for (const typeEl of typeEls) {
+      switch (typeEl.innerText) {
+        case 'fire':
+          typeEl.classList.add('fire')
+          break
+        case 'grass':
+          typeEl.classList.add('grass')
+          break
+        case 'water':
+          typeEl.classList.add('water')
+          break
+        case 'bug':
+          typeEl.classList.add('bug')
+          break
+        case 'psychic':
+          typeEl.classList.add('psychic')
+          break
+        case 'ground':
+          typeEl.classList.add('ground')
+          break
+        case 'poison':
+          typeEl.classList.add('poison')
+          break
+        case 'normal':
+          typeEl.classList.add('normal')
+          break
+        case 'fairy':
+          typeEl.classList.add('fairy')
+          break
+        case 'fighting':
+          typeEl.classList.add('fighting')
+          break
+        case 'electric':
+          typeEl.classList.add('electric')
+          break
+
+        default:
+        // console.log(`Sorry, we are out of`)
+      }
+    }
   }
 }
 
