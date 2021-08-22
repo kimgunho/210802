@@ -8,26 +8,26 @@ a{margin:0;text-decoration: none;color:#000;}
 h1{font-size: 2rem;color:coral;text-transform: uppercase;text-align: center;padding:1.25em 0;}
 #app{background-color: #f0f0f0;width: 90%;border-radius: 10px;margin:30px auto;box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);}
 #list{padding:20px;box-sizing: border-box;display: flex;flex-wrap: wrap;}
-#list li{width: 25%;padding:30px;box-sizing: border-box;}
+#list li{width: 21%;padding:30px;box-sizing: border-box;margin:2%;border-radius: 30px;}
+#list li.fire{background-color: brown;}
+#list li.bug{background-color:yellowgreen;}
+#list li.grass{background-color: darkgreen;}
+#list li.water{background-color:cornflowerblue;}
+#list li.electric{background-color:yellow;}
+#list li.normal{background-color:dimgray;}
+#list li.poison{background-color:purple;}
+#list li.ground{background-color:darkslategrey;}
+#list li.fighting{background-color:ivory;}
+#list li.fairy{background-color:plum;}
+#list li.psychic{background-color:palevioletred;}
+#list li.rock{background-color:slategrey;}
 #list li.remove{display: none;}
-#list li.glass{background-color: seagreen;}
 
 #list li p.remove{text-indent: -9999px;width: 10px;height: 10px;background-color: #000;border-radius: 50%;display: none;}
 #list li img{width: 100%;}
 #list li h2{color:#000;font-size: 1.125rem;font-weight: 400;}
 #list li p.type{padding-top: 10px;}
-#list li p.type span{background-color: #000;color:#fff;padding:3px 5px;box-sizing: border-box;border-radius: 10px;}
-#list li p.type span.fire{background-color: brown;color:#fff;}
-#list li p.type span.bug{background-color:yellowgreen;color:#fff;}
-#list li p.type span.grass{background-color: darkgreen;color:#fff;}
-#list li p.type span.water{background-color:cornflowerblue;color:#fff;}
-#list li p.type span.electric{background-color:yellow;color:#333;}
-#list li p.type span.normal{background-color:dimgray;color:#fff;}
-#list li p.type span.poison{background-color:purple;color:#fff;}
-#list li p.type span.ground{background-color:darkslategrey;color:#fff;}
-#list li p.type span.fighting{background-color:ivory;color:#333;}
-#list li p.type span.fairy{background-color:plum;color:#333;}
-#list li p.type span.psychic{background-color:palevioletred;color:#333;}
+#list li p.type span{color:#fff;padding:3px 5px;box-sizing: border-box;border-radius: 10px;border:1px solid #fff}
 
 .hash-nav{display: flex;flex-wrap: wrap;}
 .hash-nav li{padding:10px;cursor: pointer;}

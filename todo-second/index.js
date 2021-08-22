@@ -26,7 +26,7 @@ class Pokemons {
   }
 
   repeatLoadFuction() {
-    const repeatMaxNum = 10
+    const repeatMaxNum = 102
     for (let i = 1; i <= repeatMaxNum; i++) {
       this.getPokemon(i)
     }
