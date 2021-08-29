@@ -1,0 +1,13 @@
+/* reset */
+body{padding:0;margin:0;}
+h1,h2,h3,h4,h5,h6{margin:0;}
+ul{list-style: none;padding:0;margin:0;}
+p{margin:0;}
+a{margin:0;text-decoration: none;color:#000;}
+
+
+#list{display: flex;flex-wrap: wrap;}
+#list li{width: 25%;padding:20px;box-sizing: border-box;}
+
+#hash-nav{display: flex;padding-bottom: 50px;}
+#hash-nav li{padding:10px;cursor: pointer;}
