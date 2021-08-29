@@ -15,7 +15,7 @@ class Monsters {
   initialize() {
     this.render()
     this.componentBindEvent()
-    // this.componentUpdateState()
+    this.componentUpdateState()
   }
 
   render() {
@@ -35,7 +35,7 @@ class Monsters {
       },
       ``,
     )
-    this.componentUpdateState()
+    // this.componentUpdateState()
   }
 
   componentBindEvent() {
@@ -52,6 +52,7 @@ class Monsters {
   }
 
   componentUpdateState() {
+    // 이벤트 위임
     const removeEl = document.querySelectorAll('.remove')
     for (const remove of removeEl) {
       remove.addEventListener('click', (e) => {

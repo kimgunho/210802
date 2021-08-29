@@ -6,6 +6,11 @@
 # 속성으로 원하는 색상넣기
 # 속성으로 원하는 포켓몬 찾기
 
+// 돔으로하지말자!!!~~
+// 리엑트스테이트를 알아보자 !!!
+// 제이쿼리방식을 쓰지말자...
+// 이벤트 위임.. !!!!!
+
 render : 함수는 화면에 데이터를 그리는 용도
 componentBindEvent : 이벤트를 달아주는 함수
 initialize : 값을 초기화 해주는 함수
@@ -22,11 +27,11 @@ class Pokemons {
   initialize() {
     this.repeatLoadFuction()
     this.render()
-    // this.componentBindEvent()
+    this.componentBindEvent() // q1
   }
 
   repeatLoadFuction() {
-    const repeatMaxNum = 102
+    const repeatMaxNum = 10
     for (let i = 1; i <= repeatMaxNum; i++) {
       this.getPokemon(i)
     }
@@ -34,13 +39,15 @@ class Pokemons {
 
   getPokemon(num) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${num}`)
-      .then((res) => res.json())
+      .then((res) => res.json()) //q2
+      // .then((data) => console.log(data))
       .then((data) => {
         const {
           name,
           id,
           sprites: { front_default: img },
           types: {
+            // 타입 자체를 넘겨서 그릴수있도록.
             0: {
               type: { name: typeName },
             },
@@ -103,7 +110,7 @@ class Pokemons {
       `<li class='all'>all</li>`,
     )
 
-    this.componentBindEvent()
+    // this.componentBindEvent()
   }
 
   componentBindEvent() {
@@ -112,6 +119,9 @@ class Pokemons {
   }
 
   selectHashType() {
+    // 이벤트 위임
+    // dom말고 조금더 리엑트스럽게 흠~~
+    // this.pokemon -> 타입이 불속성만 재리셋한다? -> 배열을 더 만들어준다...
     const selectEl = document.querySelectorAll('.hash-nav li')
     const pokemonEls = document.querySelectorAll('#list li')
     const REMOVEKEY = 'remove'
